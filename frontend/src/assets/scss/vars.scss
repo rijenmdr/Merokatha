@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+//colors
+$primary-color: #07337e;
+$success-color: #4caf50;
+$danger-color: #f44336;
+$warning-color: #ff9800;
+$secondary-color: #0a96c1;
+$dark-primary: #042d47;
+$primary-font-color: #343231;
+$accent-color: #4c8d29;
+$light-color: white;
+$dark-color: #1C1C1C;
+$light-dark-color: #ddd;
+$navbar-color: #07337e;
+$primary-gradient: linear-gradient(110.21deg, #2B61B5 16.61%, #07337E 85.25%);
+$primary-button-shadow: #1b9cee9e;
+$transparency: rgba(0, 0, 0, 0.12);
+$info-color: #2196f3;
+$primary-hover: #005a91;
+$text-color: #2e2e2e;
+$primary-text-color: #07337e;
+$text-grey: #484848;
+
+//fonts
+$title-font: "Montserrat", serif;
+$title-size: 1.6rem;
+$sub-title-size: 1.6rem;
+$primary-font: "Montserrat", sans-serif;
+$card-shadow: 2px 2px 16px rgba(0, 0, 0, 0.12);
+$button-shadow: 1px 1px 8px rgba(0, 0, 0, 0.12);
+$border-radius: 8px;
+$button-radius: 8px;
+$standard-font-size: 16px;
+$info-font-size: 14px;
+$header-font-size: 18px;
+$menu-font-size: 0.95rem;
+
+//sizes
+$xs: 4px;
+$sm: 8px;
+$md: 16px;
+$lg: 24px;
+$xl: 32px;
+
+//layout
+$padding-val: 6.5vw;
+
+$section-padding: 3.5vh 7.5vw;
+$wrapper-val: 2.5vw;

@@ -1,0 +1,113 @@
+//header
+@import '../../assets//scss/layout.scss';
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: .1px solid #cecece;
+    height: 100px;
+    padding: 8px;
+    align-items: center;
+    .logo {
+        p {
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            font-size: 3rem;
+            background: linear-gradient(to bottom, #000, #000 60%, #fff 60%, #fff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-repeat: no-repeat;
+            transition: background 0.2s ease-out;
+            white-space: nowrap;
+          }
+          
+          span {
+            position: relative;
+          }
+          
+          span:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: #000;
+            bottom: 9px;
+            transition: all 0.2s ease-out;
+          }
+          
+          p:hover {
+            background-position: 0 11px;
+          }
+          
+          span:hover:before {
+            transform: translateY(20px)
+          }
+      }
+    .social-media{
+        display: inline-block;
+        a{
+            text-decoration: none;
+            margin-right: 10px;
+            color: #000;
+            font-size: 20px;
+        }
+    }
+}
+
+//nav
+
+.nav{
+  padding: 8px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+  height: 9vh;
+  min-width: 80px;
+  width: 100%;
+  transition: .3s;
+    .nav-item{
+      display: flex;
+      li{
+        list-style: none;
+        a{
+          margin-right:40px;
+          text-decoration: none;
+          color: #000;
+          transition: .4s ease;
+          &:hover{
+            border-bottom: 4px solid #000;
+          }
+        }
+      }
+    }
+    .search{
+      margin-right: 20px;
+      i{
+        cursor: pointer;
+      }
+    }
+    .search-bar{
+      width: 100%;
+      position: relative;
+      input{
+        width: 100%;
+        height: 40px;
+        outline: none;
+      }
+      span{
+        position: absolute;
+        top: 8px;
+        right: 0;
+        cursor: pointer;
+      }
+    }
+  
+    &.scrolled {
+      box-shadow: 0 4px 16px rgba(70, 71, 72, 0.7);
+      background: #fff;
+    }
+}
