@@ -41,13 +41,24 @@ const Nav=()=> {
             <div className={`d-flex justify-between align-center ${searchBarVisible &&'d-none'}`}>
                 <div></div>
                 <div className="nav-item">
-                    <li><NavLink className="item" to="/">Home</NavLink></li>
-                    <li><NavLink className="item" to="/about">About</NavLink></li>
-                    <li><NavLink className="item" to="/contact">Contact</NavLink></li>
-                    <li className="dropdown"><a className="item">Account</a>
+                    <li><NavLink className="item" to="/" activeClassName="active" exact>Home</NavLink></li>
+                    <li><NavLink className="item" to="/about" activeClassName="active">About</NavLink></li>
+                    <li><NavLink className="item" to="/contact" activeClassName="active">Contact</NavLink></li>
+                    <li className="dropdown"><a className="item" activeClassName="active">Account</a>
                         <div class="dropdown-content">
-                            <NavLink className="sub-item" to="/login">Login</NavLink>
-                            <NavLink className="sub-item" to="/signup">Sign up</NavLink>
+                            <NavLink className="sub-item" to="/login" activeClassName={false}>Login</NavLink>
+                            <NavLink className="sub-item" to="/signup" activeClassName={false}>Sign up</NavLink>
+                        </div>
+                    </li>
+                </div>
+                <div className="nav-icon">
+                    <li><NavLink className="item" to="/" activeClassName="active" exact><span class="material-icons-outlined">home</span></NavLink></li>
+                    <li><NavLink className="item" to="/about" activeClassName="active"><span class="material-icons-outlined">menu_book</span></NavLink></li>
+                    <li><NavLink className="item" to="/contact" activeClassName="active"><span class="material-icons-outlined">contact_page</span></NavLink></li>
+                    <li className="dropdown"><a className="item" activeClassName="active"><span class="material-icons-outlined">account_circle</span></a>
+                        <div class="dropdown-content">
+                            <NavLink className="sub-item" to="/login" activeClassName={false}>Login</NavLink>
+                            <NavLink className="sub-item" to="/signup" activeClassName={false}>Sign up</NavLink>
                         </div>
                     </li>
                 </div>

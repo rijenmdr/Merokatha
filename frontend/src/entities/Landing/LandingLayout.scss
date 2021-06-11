@@ -57,6 +57,17 @@
     }
 }
 
+//responsive header
+
+@media(max-width:450px){
+  .header{
+    justify-content: center;
+    .social-media{
+      display: none;
+  }
+  }
+}
+
 //nav
 
 .nav{
@@ -85,36 +96,9 @@
           }
         }
       }
-      .dropdown{
-        position: relative;
-        display: inline-block;
-        .dropdown-content{
-          position: absolute;
-          min-width:10rem;
-          display: none;
-          padding: 8px 0;
-          border: .1px solid #cecece;
-          border-radius: 5px;
-          .sub-item{
-            text-decoration: none;
-            color: black;
-            width: 100%;
-            text-align: center;
-            transition: .4s ease-out;
-            padding: 5px;
-            &:hover{
-              background-color: #cecece;
-            }
-          }
-        }
-        &:hover{
-          .dropdown-content{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-        }
-      }
+    }
+    .nav-icon{
+      display: none;
     }
     .search{
       margin-right: 20px;
@@ -142,4 +126,63 @@
       box-shadow: 0 4px 16px rgba(70, 71, 72, 0.7);
       background: #fff;
     }
+    .dropdown{
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      .dropdown-content{
+        position: absolute;
+        min-width:10rem;
+        display: none;
+        padding: 8px 0;
+        border: .1px solid #cecece;
+        border-radius: 5px;
+        .sub-item{
+          text-decoration: none;
+          color: black;
+          width: 100%;
+          text-align: center;
+          transition: .4s ease-out;
+          padding: 5px;
+          &:hover{
+            background-color: #cecece;
+          }
+        }
+      }
+      &:hover{
+        .dropdown-content{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+    .active {
+        border-bottom: 4px solid #000;
+        border-radius: 5px;
+    }
+}
+
+//responsive nav-bar
+
+@media(max-width:450px){
+  .nav{
+    .nav-item{
+      display: none;
+    }
+    .nav-icon{
+      display: contents;
+      li{
+        list-style: none;
+        a{
+          color: #000;
+        }
+      }
+    }
+    .dropdown{
+      .dropdown-content{
+        right:-75px;
+      }
+    }
+  }
 }
