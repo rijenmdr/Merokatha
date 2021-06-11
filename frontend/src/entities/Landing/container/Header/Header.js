@@ -9,9 +9,9 @@ const Header=()=> {
                 <span><p>Merokatha</p></span>
             </div>
             <div className="social-media">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="#" class="fa fa-twitter"></a>
+                <a href="https://facebook.com/" class="fa fa-facebook" target="_blank"></a>
+                <a href="https://instagram.com/" class="fa fa-instagram" target="_blank"></a>
+                <a href="https://twitter.com/" class="fa fa-twitter" target="_blank"></a>
             </div>
         </div>
     )
