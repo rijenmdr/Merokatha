@@ -12,7 +12,7 @@ const Nav=()=> {
 
     useEffect(() => {
         const handleScroll = () => {
-            const show = window.scrollY > 10;
+            const show = window.scrollY > 100;
             if (show) {
                 setScrolled(true)
             } else {
@@ -38,7 +38,7 @@ const Nav=()=> {
 
     return (
         <div className={`nav ${scrolled ? 'scrolled' :''}`}>
-            <div className={`d-flex justify-between align-center ${searchBarVisible &&'d-none'}`}>
+            <div className={`d-flex justify-between align-center full-height ${searchBarVisible &&'d-none'}`}>
                 <div></div>
                 <div className="nav-item">
                     <li><NavLink className="item" to="/" activeClassName="active" exact>Home</NavLink></li>

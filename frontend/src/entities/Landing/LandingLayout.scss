@@ -8,6 +8,7 @@
     height: 100px;
     padding: 8px;
     align-items: center;
+    background: #fafafb;
     .logo {
         p {
             cursor: pointer;
@@ -80,6 +81,8 @@
   min-width: 80px;
   width: 100%;
   transition: .3s;
+  background: transparent;
+  z-index: 1;
     .nav-item{
       display: flex;
       li{
@@ -89,10 +92,9 @@
           text-decoration: none;
           color: #000;
           transition: .4s ease-in-out;
-          &:hover{
+          &:hover:not(:nth-child(3)){
             border-bottom: 1px solid #000;
             border-radius: 5px;
-           
           }
         }
       }
@@ -137,6 +139,7 @@
         padding: 8px 0;
         border: .1px solid #cecece;
         border-radius: 5px;
+        background: #fff;
         .sub-item{
           text-decoration: none;
           color: black;
@@ -181,8 +184,10 @@
     }
     .dropdown{
       .dropdown-content{
-        right:-75px;
+        right:-48px;
+        min-width: 7rem;
       }
     }
   }
 }
+
