@@ -4,6 +4,7 @@ import Nav from './container/Nav/Nav'
 import './LandingLayout.scss'
 import '../../assets/scss/theme.scss'
 import LandingRoutes from './views/LandingRoutes'
+import Footer from './container/Footer/Footer'
 
 const LandingLayout=()=> {
     return (
@@ -11,6 +12,7 @@ const LandingLayout=()=> {
             <Header/>
             <Nav/>
             <LandingRoutes/>
+            <Footer/>
         </div>
     )
 }
