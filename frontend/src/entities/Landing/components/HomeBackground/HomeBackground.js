@@ -22,7 +22,7 @@ const HomeBackground=()=> {
         setCurrentImage(prev=>prev+1)
       }
     useEffect(() => {
-        setInterval(switchImage, 2000);
+        setInterval(switchImage, 3000);
     }, [])
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const HomeBackground=()=> {
         <div className="home-layout">
             <div className="background-image">
                 <div className="background-title">
-                    <div className="action-name">{images[currentImage]?.title}</div>
+                    <div className="reveal">{images[currentImage]?.title}</div>
                     <div className="title">Story</div>
                     <button className="btn mt-20">Explore Stories</button>
                 </div>

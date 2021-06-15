@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Footer=()=> {
+    const [showScroll, setShowScroll] = useState(false)
+    const checkScrollTop = () => {
+        if (!showScroll && window.pageYOffset > 400) {
+            setShowScroll(true)
+        } else if (showScroll && window.pageYOffset <= 400) {
+            setShowScroll(false)
+        }
+    };
+
+    window.addEventListener('scroll', checkScrollTop)
+
+    const scrollTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
     return (
         <div className="footer d-flex flex-column">
             <div className="footer-top d-flex justify-between mb-20">
@@ -49,9 +63,16 @@ const Footer=()=> {
                     <a href="https://twitter.com/" class="fa fa-twitter" target="_blank"></a>
                 </div>
                 <div className="copyright-info">
-                    &#169; Copyrights 2021. Merokatha
+                    <div className="copyright">&#169; Copyrights 2021. Merokatha </div>
                 </div>
             </div>
+            {
+                showScroll && <div className="back-to-top use" onClick={scrollTop}>
+                    <span className="back-to-top-icon material-icons">
+                        arrow_upward
+                </span>
+                </div>
+            }
         </div>
     )
 }
