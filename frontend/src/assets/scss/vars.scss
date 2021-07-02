@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Quattrocento&display=swap');
 //colors
-$primary-color: #07337e;
+$primary-color: #554432;
 $success-color: #4caf50;
 $danger-color: #f44336;
 $warning-color: #ff9800;
@@ -25,7 +26,8 @@ $text-grey: #484848;
 $title-font: "Montserrat", serif;
 $title-size: 1.6rem;
 $sub-title-size: 1.6rem;
-$primary-font: "Montserrat", sans-serif;
+$primary-font: 'Quattrocento', serif;
+$secondary-font: 'Oswald', sans-serif;
 $card-shadow: 2px 2px 16px rgba(0, 0, 0, 0.12);
 $button-shadow: 1px 1px 8px rgba(0, 0, 0, 0.12);
 $border-radius: 8px;

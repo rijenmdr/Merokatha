@@ -1,138 +1,121 @@
-import {
-    slice, concat, 
-  } from 'lodash';
-import React, { useEffect, useState } from 'react'
+
+import React, { useEffect, Suspense } from 'react'
 import HomeBackground from '../../components/HomeBackground/HomeBackground'
 import './HomeLayout.scss'
-import storyData from './StoryList.json'
-const LIMIT = 3;
+import { useDispatch, useSelector } from 'react-redux'
+import * as actions from '../../../../redux/actions'
 
-const HomeLayout=()=> {
-    const [getLatestStory, setGetLatestStory] = useState(true)
-    const [stories,setStories] = useState([])
-    const [showMore,setShowMore] = useState(true);
-    // const [list,setList] = useState(slice(DATA, 0, LIMIT));
-    const [index,setIndex] = useState(LIMIT);
-    
-    const changeContentType = () =>{
-        setGetLatestStory(!getLatestStory)
-    }
+const FeaturedCategories = React.lazy(() => import("../../components/FeaturedCategories/FeaturedCategories"));
+const FeaturedStories = React.lazy(() => import("../../components/FeaturedStories/FeaturedStories"));
+const DailyStories = React.lazy(() => import("../../components/DailyStories/DailyStories"));
 
-    const loadMore = () =>{
-        const newIndex = index + LIMIT;
-        const newShowMore = newIndex < (stories.length - 1);
-        const newList = concat(stories, slice(storyData, index, newIndex));
-        setIndex(newIndex);
-        setStories(newList);
-        setShowMore(newShowMore);
-      }
+const HomeLayout = () => {
+    const dispatch = useDispatch()
+
+    const homeReducer = useSelector(state => state.HomeReducer)
+    const { featuredCategories, featuredStories, dailyStories } = homeReducer
 
     useEffect(() => {
-       if(getLatestStory){
-           setStories(slice(storyData.sort((a,b)=>a.id-b.id),0,LIMIT))
-       } else{
-           setStories(slice(storyData.sort((a,b)=>a.likes-b.likes).reverse(),0,LIMIT))
-       }
-       setIndex(LIMIT)
-       setShowMore(true)
-    }, [getLatestStory])
+        dispatch(actions.fetchFeaturedCategories())
+        dispatch(actions.fetchFeaturedStories())
+        dispatch(actions.fetchDailyStories())
+    }, [dispatch])
 
     return (
         <div className="home-layout mb-40">
-            <HomeBackground/>
+            <HomeBackground />
             <div className="home-content">
-                <div className="content-filter d-flex justify-between align-center">
-                    <div className="content-type d-flex">
-                        <p className={`${getLatestStory && 'active'}`} onClick={changeContentType}>MOST RECENT</p>
-                        <p className={`${!getLatestStory && 'active'}`} onClick={changeContentType}>POPULAR POST</p>
+                <div className="square-box-empty-1"></div>
+                <div className="square-box-filled-1"></div>
+                {/* <div className="square-box-empty-2"></div> */}
+                <div className="square-box-filled-2"></div>
+                <div className="d-flex justify-between flex-wrap align-center first-info">
+                    <div className="title info-title w-50">
+                        We help bring out the creativity within you
                     </div>
-                    <div className="sort-dropdown">
-                        <select>
-                            <option>ALL POST</option>
-                        </select>
+                    <div className="info-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed nec
+                        suspendisse nullam magna ut  ipsum dolor sit amet, consectetur adipiscing elit.
                     </div>
                 </div>
-                <div className="content d-flex justify-between">
-                    <div className="main-stories d-flex flex-column align-center">
-                        <div className="stories d-flex flex-column">
-                            { stories && stories.map((story,key)=>(
-                                <div className="story-card mb-20">
-                                <div className="preview-image">
-                                    <img src={`${story.preview_img}`}/>
-                                </div>
-                                <div className="category mt-10">
-                                   {story.category}
-                                </div>
-                                <div className="title mt-10">
-                                    {story.title}
-                                </div>
-                                <div className="description mt-10">
-                                   {story.short_description}
-                                </div>
-                                <div className="read-more mt-10">
-                                    {`READ MORE >`}
-                                </div>
-                            </div>
-                            ))
-                            }
-                        </div>
-                        {showMore &&
-                        <div onClick={loadMore} className="load-more mt-20">
-                            {`Load More >`}
-                        </div>
-                        }
+                <div className="home-stats">
+                    <div className="content-second-image">
+
                     </div>
-                    <div className="side-info">
-                        <div className="card testimonial">
-                            <div className="profile-image">
-                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"/>
+                    <div className="stats d-flex justify-between">
+                        <div className="story-stat">
+                            <div className="stat-number">
+                                120+
                             </div>
-                            <div className="testimonial-name mb-10">
-                                Stefany Lewis
-                            </div>
-                            <div className="testimonial-description full-width">
-                                I have a list of services, being displayed beside the list is a picture and 
-                                a description, basically when I click the list item I want the picture to 
-                                change to the corresponding image/description. Right now I have the image 
-                                changing onClick with hooks which is great but I'm not sure the best way to 
-                                also change the descriptions. 
+                            <div className="stat-name">
+                                STORIES
                             </div>
                         </div>
-                        <div className="card categories mt-20">
-                            <div className="card-title">CATEGORIES</div>
-                            <div className="category-list mt-10">
-                                <div className="category">{`> Mystery`}</div>
-                                <div className="category">{`> Comedy`}</div>
-                                <div className="category">{`> Action`}</div>
-                                <div className="category">{`> Travel`}</div>
-                                <div className="category">{`> Inspiration`}</div>
-                                <div className="category">{`> Life`}</div>
+                        <div className="story-stat">
+                            <div className="stat-number">
+                                300+
+                            </div>
+                            <div className="stat-name">
+                                BLOGS
                             </div>
                         </div>
-                        <div className="card popular-stories mt-20">
-                            <div className="card-title">POPULAR STORIES</div>
-                            <div className="popular-stories-list d-flex flex-column mt-10">
-                                <div className="story">
-                                    <div className="profile-image">
-                                        <img src="https://media.istockphoto.com/photos/child-hands-formig-heart-shape-picture-id951945718?k=6&m=951945718&s=612x612&w=0&h=ih-N7RytxrTfhDyvyTQCA5q5xKoJToKSYgdsJ_mHrv0="/>
-                                    </div>
-                                    <div className="story-info">
-                                        <div className="story-title">My Love</div>
-                                        <div className="story-author"><span>by: </span>Andre Murray</div>
-                                    </div>
-                                </div>
-                                <div className="story">
-                                    <div className="profile-image">
-                                        <img src="https://media.istockphoto.com/photos/child-hands-formig-heart-shape-picture-id951945718?k=6&m=951945718&s=612x612&w=0&h=ih-N7RytxrTfhDyvyTQCA5q5xKoJToKSYgdsJ_mHrv0="/>
-                                    </div>
-                                    <div className="story-info">
-                                        <div className="story-title">My love for you is forever </div>
-                                        <div className="story-author"><span>by: </span>Andre Murray</div>
-                                    </div>
-                                </div>
+                        <div className="story-stat">
+                            <div className="stat-number">
+                                1000+
+                            </div>
+                            <div className="stat-name">
+                                WRITERS
                             </div>
                         </div>
                     </div>
+                    <div className="content-second-info title">
+                        At the end of the day, it’s your passion, your personality,
+                        that drives what you’re going to do.
+                    </div>
+                </div>
+                <div className="featured-categories">
+                    <div className="title">
+                        Our Featured Categories
+                    </div>
+                    <div className="border-bottom-line w-5">
+                    </div>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <FeaturedCategories
+                            featuredCategories={featuredCategories}
+                        />
+                    </Suspense>
+                </div>
+                <div className="featured-story">
+                    <div className="title">
+                        Our Featured Stories
+                    </div>
+                    <div className="border-bottom-line w-5">
+                    </div>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <FeaturedStories
+                            featuredStories={featuredStories}
+                        />
+                    </Suspense>
+                </div>
+                <div className="content-info">
+                    <div className="content-image">
+
+                    </div>
+                    <div className="content-info title">
+                        Some of these things are true and some of them lies.
+                        But they are all good stories.
+                    </div>
+                </div>
+                <div className="daily-stories">
+                    <div className="title">
+                        Our Daily Useful Stories
+                    </div>
+                    <div className="border-bottom-line w-5"></div>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <DailyStories
+                            dailyStories={dailyStories}
+                        />
+                    </Suspense>
                 </div>
             </div>
         </div>

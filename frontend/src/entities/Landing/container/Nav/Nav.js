@@ -37,39 +37,28 @@ const Nav=()=> {
     }, [searchBarVisible])
 
     return (
-        <div className={`nav ${scrolled ? 'scrolled' :''}`}>
-            <div className={`d-flex justify-between align-center full-height ${searchBarVisible &&'d-none'}`}>
-                <div></div>
+        <div className={`nav ${searchBarVisible && 'd-flex align-center'} ${scrolled ? 'scrolled' :''}`}>
+            { !searchBarVisible ? 
+            <div className={`d-flex justify-between align-center full-height`}>
+                <div className="logo">Merokatha</div>
                 <div className="nav-item">
                     <li><NavLink className="item" to="/" activeClassName="active" exact>Home</NavLink></li>
                     <li><NavLink className="item" to="/about" activeClassName="active">About</NavLink></li>
                     <li><NavLink className="item" to="/contact" activeClassName="active">Contact</NavLink></li>
                     <li className="dropdown"><a className="item" activeClassName="active">Account</a>
-                        <div class="dropdown-content">
-                            <NavLink className="sub-item" to="/login" activeClassName={false}>Login</NavLink>
-                            <NavLink className="sub-item" to="/signup" activeClassName={false}>Sign up</NavLink>
+                        <div className="dropdown-content">
+                            <NavLink className="sub-item" to="/login" activeClassName="">Login</NavLink>
+                            <NavLink className="sub-item" to="/signup" activeClassName="">Sign up</NavLink>
                         </div>
                     </li>
-                </div>
-                <div className="nav-icon">
-                    <li><NavLink className="item" to="/" activeClassName="active" exact><span class="material-icons-outlined">home</span></NavLink></li>
-                    <li><NavLink className="item" to="/about" activeClassName="active"><span class="material-icons-outlined">menu_book</span></NavLink></li>
-                    <li><NavLink className="item" to="/contact" activeClassName="active"><span class="material-icons-outlined">contact_page</span></NavLink></li>
-                    <li className="dropdown"><a className="item" activeClassName="active"><span class="material-icons-outlined">account_circle</span></a>
-                        <div class="dropdown-content">
-                            <NavLink className="sub-item" to="/login" activeClassName={false}>Login</NavLink>
-                            <NavLink className="sub-item" to="/signup" activeClassName={false}>Sign up</NavLink>
-                        </div>
-                    </li>
-                </div>
-                <div className={`search`}>
                     <i onClick={searchClickHandler} className="material-icons-outlined">search</i>
                 </div>
-            </div>
-            <div className={`${!searchBarVisible ?'d-none':'search-bar'}`}>
+            </div> :
+            <div className={`search-bar`}>
                 <input ref={inputRef} type="text" placeholder="Search..."/>
-                <span class="material-icons-outlined" onClick={()=>setSearchBarVisible(false)}>close</span>
+                <span className="material-icons-outlined" onClick={()=>setSearchBarVisible(false)}>close</span>
             </div>
+            }
         </div>
     )
 }

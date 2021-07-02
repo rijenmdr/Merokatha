@@ -1,48 +1,33 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
+import BackgroundImage from '../../../../assets/images/background.png'
 
-const HomeBackground=()=> {
-    const [currentImage, setCurrentImage] = useState(0)
-    const imageRef = useRef()
-    const [images, setImages] = useState([
-        {
-            title : "CREATE",
-            image : "https://www.rushdah-ir.com/wp-content/uploads/2018/03/sliders1-1.jpg",
-        },
-        {
-            title : "READ",
-            image : "https://wallpapercave.com/wp/wp4549752.jpg"
-        },
-        {
-            title : "SHARE",
-            image:"https://cdn2.hubspot.net/hubfs/202339/canvas/images/parallax/Website-Design-Background.png"
-        }
-    ]) 
-
-    const switchImage=()=> {
-        setCurrentImage(prev=>prev+1)
-      }
-    useEffect(() => {
-        setInterval(switchImage, 3000);
-    }, [])
-
-    useEffect(() => {
-        if(currentImage>=images.length){
-            setCurrentImage(0)
-        }
-    }, [currentImage])
-    
+const HomeBackground = () => {
     return (
         <div className="home-layout">
             <div className="background-image">
-                <div className="background-title">
-                    <div className="reveal">{images[currentImage]?.title}</div>
-                    <div className="title">Story</div>
-                    <button className="btn mt-20">Explore Stories</button>
+                <div className="background-text">
+                    <div className="motto">Everybody has a story</div>
+                    <div className="info">Discover how different people view life through their own lenses!</div>
+                    <div className="explore">EXPLORE
+                        <div className="border"></div></div>
                 </div>
-               
+                <div className="background-bottom d-flex justify-between align-center full-width">
+                    <div className="bottom-left d-flex flex-column align-center">
+                        <div className="oval">
+                            <div className="oval-line"></div>
+                        </div>
+                        <div className="bottom-line">
+
+                        </div>
+                    </div>
+                    <div className="social-media">
+                        <a href="https://facebook.com/" target="_blank" rel="noreferrer"><i className="fa fa-facebook mr-xl"></i></a>
+                        <a href="https://instagram.com/" target="_blank" rel="noreferrer"><i className="fa fa-instagram mr-xl"></i></a>
+                        <a href="https://twitter.com/" target="_blank" rel="noreferrer"><i className="fa fa-twitter mr-xl"></i></a>
+                    </div>
+                </div>
                 <img
-                    ref={imageRef}
-                    src={images[2]?.image}
+                    src={BackgroundImage}
                     alt="images"
                 />
             </div>
