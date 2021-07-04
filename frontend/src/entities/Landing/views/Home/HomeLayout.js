@@ -40,9 +40,7 @@ const HomeLayout = () => {
                 </div>
                 <div className="home-stats">
                     <div className="content-second-image">
-
-                    </div>
-                    <div className="stats d-flex justify-between">
+                    <div className="stats d-flex justify-evenly align-center pa-lg">
                         <div className="story-stat">
                             <div className="stat-number">
                                 120+
@@ -67,6 +65,7 @@ const HomeLayout = () => {
                                 WRITERS
                             </div>
                         </div>
+                    </div>
                     </div>
                     <div className="content-second-info title">
                         At the end of the day, it’s your passion, your personality,

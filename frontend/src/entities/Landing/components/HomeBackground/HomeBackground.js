@@ -4,7 +4,8 @@ import BackgroundImage from '../../../../assets/images/background.png'
 const HomeBackground = () => {
     return (
         <div className="home-layout">
-            <div className="background-image">
+            <div className="background-image d-flex flex-column justify-between">
+                <div></div>
                 <div className="background-text">
                     <div className="motto">Everybody has a story</div>
                     <div className="info">Discover how different people view life through their own lenses!</div>
@@ -26,10 +27,10 @@ const HomeBackground = () => {
                         <a href="https://twitter.com/" target="_blank" rel="noreferrer"><i className="fa fa-twitter mr-xl"></i></a>
                     </div>
                 </div>
-                <img
+                {/* <img
                     src={BackgroundImage}
                     alt="images"
-                />
+                /> */}
             </div>
         </div>
     )
