@@ -100,7 +100,7 @@ const HomeLayout = () => {
                     <div className="content-image">
 
                     </div>
-                    <div className="content-info title">
+                    <div className="content-desc title">
                         Some of these things are true and some of them lies.
                         But they are all good stories.
                     </div>

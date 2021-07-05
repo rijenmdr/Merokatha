@@ -2,7 +2,7 @@ import React from 'react'
 
 const FeaturedStories = ({ featuredStories }) => {
     return (
-        <div className="featured-story-list d-flex justify-between mt-40">
+        <div className="featured-story-list d-flex justify-between flex-wrap mt-40">
             {
                 featuredStories && featuredStories.map(story => (
                     <div key={story.id} className="story-card d-flex flex-column pointer">
