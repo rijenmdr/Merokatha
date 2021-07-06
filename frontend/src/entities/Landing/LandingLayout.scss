@@ -62,9 +62,11 @@
     }
     .search-bar{
       width: 100%;
+      display: flex;
+      justify-content: flex-end;
       position: relative;
       input{
-        width: 100%;
+        width: 30vw;
         height: 40px;
         outline: none;
         border: none;
@@ -127,10 +129,15 @@
 
 //responsive nav-bar
 
-@media(max-width:450px){
+@media(max-width:600px){
   .nav{
     .nav-item{
-      display: none;
+      li{
+        display: none;
+      }
+      .menu{
+        display: block;
+      }
     }
     .dropdown{
       .dropdown-content{
@@ -138,6 +145,12 @@
         min-width: 7rem;
       }
     }
+    .search-bar{
+      input{
+        width: 50vw;
+      }
+    }
+
   }
 }
 
