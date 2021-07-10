@@ -276,6 +276,15 @@ body {
   color: #252525;
 }
 
+%sub-title,
+.sub-title {
+  font-family: $secondary-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 48px;
+}
+
 .primary-link {
   font-family: $primary-font;
   margin: 10px 0;

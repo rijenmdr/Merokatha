@@ -984,12 +984,19 @@ body {
 .mt-40 {
   margin-top: 40px;
 }
+.mt-15vh {
+  margin-top: 15vh;
+}
 
 .mr-10 {
   margin-right: 10px;
 }
 .error-border {
   border: 1px solid red !important;
+}
+.border-bottom-line{
+  height: 0px;
+  border: 2px solid #404040;
 }
 @media (max-width: 576px) {
   @for $i from 1 through 12 {

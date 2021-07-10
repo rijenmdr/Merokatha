@@ -1,0 +1,303 @@
+@import '../../../../assets//scss//layout.scss';
+
+.about-layout{
+    margin-bottom: 20vh;
+    .square-box-empty{
+        bottom: 92%;
+        right: 90%;
+        border: 12px solid rgba(214, 196, 179, 0.3);
+        transform: rotate(-45deg);
+        width: 280px;
+        height: 280px;
+        z-index: -1;
+      }
+      .square-box-filled{
+        width: 1100px;
+        height: 1100px;
+        left: 50%;
+        top: 45%;
+        background: linear-gradient(0deg, rgba(214, 196, 179, 0.3), rgba(214, 196, 179, 0.3));
+        transform: rotate(-45deg);
+        z-index: -1;
+      }
+    .background-image{
+        margin-top: -11vh;
+        top: 0;
+        background: linear-gradient(106.7deg, rgba(0, 0, 0, 0.6) -2.22%, rgba(0, 0, 0, 0.4) 62.22%), url('../../../../assets/images/aboutBackground.jpg');
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center; 
+        .background-text{
+            padding: 0 5.5vw;
+            color: #fff;
+            .background-title{
+                font-family: $secondary-font;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 54px;
+                line-height: 54px;
+            }
+            .border{
+                border: 3px solid #F2F2F2;
+                transform: rotate(180deg);
+                width: 50px;
+                margin-top: 10px;
+            }
+            .background-info{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 32px;
+                width: 50%;
+                margin-top: 20px;
+            }
+        }
+        .absolute-info{
+            font-family: $secondary-font;
+            top: 80%;
+            left: 63.2%;
+            border-radius: 8px 0 0 8px;
+            background: #F3EEE9;
+            line-height: 50px;
+            padding: 64px;
+            width: 500px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .about-content{
+        position: relative;
+        overflow: hidden;
+        .how-we-work{
+            padding: 0 0 0 5.5vw;
+            margin-top: 30vh;
+            .work-steps{
+                margin-left:5vw;
+                margin-top: 40px;
+                border: 12px solid rgba(214, 196, 179, 0.3);
+                padding: 64px;
+                .step{
+                    .step-no{
+                        right: 94.2%;
+                        background: #F3EEE9;
+                        padding: 56px;
+                        border-radius: 50%;
+                        font-family: $primary-font;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 36px;
+                    }
+                    .step-info{
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+        .create-background{
+            margin-top: 20vh;
+            background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 100%), url('../../../../assets/images/createImageBackground.jpg');
+            border-radius: 12px;
+            width: 100%;
+            height: 500px;
+            color: #fff;
+            .create-title{
+                color: #fff;
+                letter-spacing: 1px;
+            }
+            .create-info{
+                width: 50%;
+                text-align: center;
+                letter-spacing: 0.75px;
+                line-height: 28px;
+            }
+            .create-btn{
+                width: 200px;
+                font-family: $primary-font;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 16px;
+                text-transform: uppercase;
+                letter-spacing: 0.75px;
+                color: #555555;;
+            }
+        }
+        .our-team{
+            margin-top: 20vh;
+            padding:0 5.5vw;
+            .teams{
+                margin-top: 20px;
+                .team{
+                    margin-top: 40px;
+                    .profile-pic{
+                        border-radius: 12px;
+                        width: 470px;
+                        height: 350px;
+                        background-size: cover;
+                        background-position: center;
+                    }
+                    .team-info{
+                        margin-left: 80px;
+                        color: #252525;
+                        .job-title{
+                            font-family: $secondary-font;
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 36px;
+                            margin-bottom: 10px;
+                        }
+                        .job-desc{
+                            line-height: 20px;
+                            margin-bottom: 10px;
+                        }
+                        .name{
+                            font-weight: bold;
+                            font-size: 20px
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//responsive
+
+@media (max-width:1125px) {
+    .about-layout{
+        .background-image{
+            .absolute-info{
+                left: 0%;
+                border-radius: 12px;
+            }
+        }
+        .about-content{
+            .our-team{
+                .teams{
+                    .team{
+                        flex-direction: column;
+                        .profile-pic{
+                            align-items: center;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .team-info{
+                            margin-left: 0;
+                           display: flex;
+                           align-items: center;
+                           flex-direction: column;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:950px) {
+    .about-layout{
+        .about-content{
+            .how-we-work{
+                .work-steps{
+                    .step{
+                        .step-no{
+                            padding: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .about-layout{
+        .background-image{
+            .background-text{
+                .background-info{
+                    width: 100%;
+                    line-height: 28px;
+                    font-size: 16px;
+                }
+            }
+            .absolute-info{
+               width: 100% !important;
+            }
+        }
+    }
+}
+
+@media (max-width:665px) {
+    .about-layout{
+        .about-content{
+            .how-we-work{
+                .work-steps{
+                    .step{
+                        .step-no{
+                            padding: 21px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:574px) {
+    .about-layout{
+        .background-image{
+            .absolute-info{
+                font-size: 2.2rem;
+                padding: 42px !important;
+                height: 200px !important;
+                top:88% !important;
+            }
+        }
+    }
+}
+
+@media (max-width:478px) {
+    .about-layout{
+        .about-content{
+            .how-we-work{
+                .work-steps{
+                    .step{
+                        .step-no{
+                            right: 90%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:435px) {
+    .about-layout{
+        .background-image{
+            .absolute-info{
+                padding: 16px !important;
+            }
+        }
+    }
+}
+
+@media (max-width:380px) {
+    .about-layout{
+        .about-content{
+            .how-we-work{
+                .work-steps{
+                    .step{
+                        .step-no{
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
