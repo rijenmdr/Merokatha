@@ -1,12 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import * as actions from '../../../../redux/actions'
 
 const Nav = () => {
     const [searchBarVisible, setSearchBarVisible] = useState(false)
     const [scrolled, setScrolled] = useState(false)
 
+    const authenticationReducer = useSelector(state => state.AuthenticationReducer)
+    const { isLoggedIn } = authenticationReducer
+
     const navRef = useRef()
     const inputRef = useRef()
+
+    const dispatch = useDispatch()
 
     navRef.current = scrolled
 
@@ -30,6 +37,10 @@ const Nav = () => {
         setSearchBarVisible(true)
     }
 
+    const logoutHandler = () => {
+        dispatch(actions.userLogout())
+    }
+
     useEffect(() => {
         if (searchBarVisible) {
             inputRef.current.focus()
@@ -47,8 +58,15 @@ const Nav = () => {
                         <li><NavLink className="item" to="/contact" activeClassName="active">Contact</NavLink></li>
                         <li className="dropdown"><a className="item" activeClassName="active">Account</a>
                             <div className="dropdown-content">
-                                <NavLink className="sub-item" to="/login" activeClassName="">Login</NavLink>
-                                <NavLink className="sub-item" to="/signup" activeClassName="">Sign up</NavLink>
+                                {!isLoggedIn ?
+                                    <>
+                                        <NavLink className="sub-item" to="/login" activeClassName="">Login</NavLink>
+                                        <NavLink className="sub-item" to="/signup" activeClassName="">Sign up</NavLink>
+                                    </> :
+                                    <>
+                                        <p onClick={logoutHandler} className="sub-item">Logout</p>
+                                    </>
+                                }
                             </div>
                         </li>
                         <i onClick={searchClickHandler} className="material-icons-outlined">search</i>

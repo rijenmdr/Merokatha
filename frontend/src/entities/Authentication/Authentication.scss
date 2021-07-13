@@ -1,0 +1,170 @@
+@import '../../assets//scss/layout.scss';
+
+.authentication-layout{
+    height: 100vh;
+    width: 100%;
+    .authentication-left{
+        background: linear-gradient(206.05deg, rgba(56, 47, 47, 0.70) -10.43%, rgba(49, 39, 39, 0.59) 112.55%), url('../../assets/images/authentication-background.jfif');
+        width: 45%;
+        background-size: cover;
+        color: #ffffff;
+        .logo{
+            padding: 2.5vw 5.5vw;
+        }
+        .welcome-info{
+           margin-top: 20vh;
+           padding: 0 5.5vw;
+           .welcome-title{
+            font-family: $secondary-font;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 52px;
+            line-height: 54px;
+            letter-spacing: 0.75px;
+           }
+           .welcome-desc{
+                margin-top: 20px;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 24px;
+                
+           }
+        }
+    }
+    .authentication-right{
+        padding: 4vw 10vw;
+        position: relative;
+        overflow: hidden;
+        width: 55%;
+        overflow-y: auto;
+        .square-box-filled{
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            left: 60%;
+            bottom:38%;
+            background: linear-gradient(0deg, rgba(214, 196, 179, 0.3), rgba(214, 196, 179, 0.3));
+            transform: rotate(-45deg);
+            z-index: -1;
+        }
+        .auth-message{
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: .75px;
+            color: #6E7191;
+        }
+        .auth-form{
+            width: 95%;
+            .form-control{
+                display: flex;
+                flex-direction: column;
+                label{
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 16px;    
+                    letter-spacing: 0.75px;
+                    color: #4E4B66;
+                    margin-bottom: 10px;
+                }
+                .input-control{
+                    margin-bottom: 20px;
+                    width: 100%;
+                    input{
+                        border: none;
+                        border-bottom: 1px solid rgba(161, 149, 149, 0.808);
+                        padding: 8px;
+                        outline: none;
+                        font-family: $primary-font;
+                        font-size: 16px;
+                        transition: .4s ease-in-out;
+                        background: transparent;
+                        width: 100%;
+                        &:focus{
+                            width: 100%;
+                            border-bottom: 1px solid #000;
+                        }
+                    }
+                    .validate-error{
+                        border-bottom: 1px solid $danger-color;
+                        &:focus{
+                            border-bottom: 1px solid $danger-color;
+                        }
+                    }
+                    .eye-btn{
+                        position: absolute;
+                        right: 0;
+                        font-size: 21px;
+                        cursor: pointer;    
+                    }
+                    .top-no-error{
+                        top: 42%;
+                    }
+                    .top-error{
+                        top: 32%;
+                    }
+                    .error{
+                        font-size: 14px;
+                    }
+                }
+            }
+            .check-control{
+                margin-top: 10px;
+                margin-bottom: 30px;
+                input{
+                    cursor: pointer;
+                }
+                label{
+                    margin-left: 20px;
+                    color: #4E4B66;
+                    font-size: 14px;
+                }
+            }
+            .auth-btn{
+                background: #554432;
+                text-transform: uppercase;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 700;
+                padding: 16px;
+                letter-spacing: 0.75px;
+            }
+        }
+        .or-separator{
+            .border-line{
+                background: #4E4B66;
+                width: 40%;
+                height: 1px;
+                opacity: 0.56;
+            }
+            .or{
+                font-size: 16px;
+                line-height: 36px;
+                letter-spacing: 0.75px;
+                color: #4E4B66;
+            }
+        }
+        .other-signup{
+            .signup-btn{
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+                padding: 16px 12px;
+                background:transparent;
+                img{
+                    width: 19px;
+                    height: 22px;
+                }
+                span{
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    color: #252525;
+                    letter-spacing: 0.75px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
