@@ -6,20 +6,20 @@ const FeaturedStories = ({ featuredStories }) => {
             {
                 featuredStories && featuredStories.map(story => (
                     <div key={story.id} className="story-card d-flex flex-column pointer">
-                        <img src={story?.storyData?.preview_img} alt={story?.storyData?.title}/>
+                        <img src={story?.preview_img} alt={story?.title}/>
                         <div className="story-info d-flex flex-column">
                             <div className="story-title">
-                                {story?.storyData?.title}
+                                {story?.title}
                             </div>
                             <div className="published-date">
-                                {story?.storyData?.published_date}
+                                {story?.published_date}
                             </div>
                             <div className="short-description">
-                                {story?.storyData?.short_description}
+                                {story?.short_description}
                             </div>
                             <div className="d-flex justify-start">
                                 <div className="category">
-                                    {story?.category?.name}
+                                    {story?.category_name}
                                 </div>
                             </div>
                         </div>
