@@ -1,5 +1,6 @@
 import firebase from '../../../../../firebase/firebase'
 import * as actionType from './HomeTypes'
+import * as actions from '../../../../../redux/actions'
 
 const db = firebase.firestore()
 
@@ -35,7 +36,7 @@ export const fetchFeaturedCategories = () => async (dispatch) => {
         });
         dispatch(fetchFeaturedCategoriesSucess(mainListItems))
     } catch (error) {
-        console.log(error)
+        dispatch(actions.setToastState(true,"Error",`${error.message}`))
     }
 }
 
@@ -51,7 +52,7 @@ export const fetchFeaturedStories = () => async dispatch => {
         dispatch(fetchFeaturedStoriesSuccess(featuredStoriesList))
     }
     catch (error) {
-        console.log(error)
+        dispatch(actions.setToastState(true,"Error",`${error.message}`))
     }
 
 }
@@ -68,6 +69,6 @@ export const fetchDailyStories = () => async dispatch => {
         dispatch(fetchDailyStoriesSuccess(dailyStories))
     }
     catch (error) {
-        console.log(error)
+        dispatch(actions.setToastState(true,"Error",`${error.message}`))
     }
 }

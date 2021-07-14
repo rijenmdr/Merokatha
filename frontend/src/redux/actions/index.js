@@ -12,3 +12,7 @@ export {
     checkAuthentication,
     userLogout
 } from '../../entities/Authentication/services/AuthenticationAction';
+
+export {
+    setToastState
+} from '../../components/Toast/services/ToastAction'

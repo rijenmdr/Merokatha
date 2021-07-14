@@ -9,6 +9,7 @@ import FacebookLogo from '../../assets/images/facebook.png'
 import GoogleLogo from '../../assets/images/google.png'
 import * as actions from '../../redux/actions'
 import Loader from '../../components/Loader/Loader'
+import Toast from '../../components/Toast/Toast'
 
 const Register = () => {
     const [currentPassword, setCurrentPassword] = useState('')
@@ -44,6 +45,7 @@ const Register = () => {
 
     return (
         <div className="authentication-layout d-flex">
+            <Toast/>
             {
                 loading && <Loader />
             }

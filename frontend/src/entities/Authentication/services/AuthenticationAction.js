@@ -1,5 +1,6 @@
 import firebase from '../../../firebase/firebase'
 import * as actionType from './AuthenticationType'
+import * as actions from '../../../redux/actions'
 
 const db = firebase.firestore()
 
@@ -38,16 +39,18 @@ export const registerNewUser = (user, history) => dispatch => {
                         full_name: user?.name,
                         email: user?.email
                     }).then((res) => {
+                        firebase.auth().signOut()
+                        dispatch(actions.setToastState(true,"Success",`User Registered Successfully`))
                         dispatch(authFail())
                         history.push('/login')
                     }).catch(err => {
-                        console.log(err)
+                        dispatch(actions.setToastState(true,"Error",`${err.message}`))
                         dispatch(authFail())
                     })
             }
         })
         .catch(err => {
-            console.log(err)
+            dispatch(actions.setToastState(true,"Error",`${err.message}`))
             dispatch(authFail())
         })
 }
@@ -64,19 +67,21 @@ export const signInUser = (user, history) => dispatch => {
             history.push('/')
         })
         .catch(err => {
-            console.log(err)
+            dispatch(actions.setToastState(true,"Error",`${err.message}`))
             dispatch(authFail())
         })
 }
 
-export const checkAuthentication = () => dispatch => {
-    firebase.auth().onAuthStateChanged(authenticatedUser => {
-        console.log(authenticatedUser)
+export const checkAuthentication = () =>dispatch => {
+    firebase.auth().onAuthStateChanged(async authenticatedUser => {
         if (authenticatedUser) {
             const auth_user = {
                 uid: authenticatedUser?.uid,
                 email: authenticatedUser?.email
             }
+            const snapshot = await db.collection("users").doc(authenticatedUser.uid).get()
+            const data = snapshot.data()
+            dispatch(actions.setToastState(true,"Success",`Welcome Back ${data?.full_name}`))
             dispatch(loginUserSuccess(auth_user))
         }
     })
@@ -85,8 +90,8 @@ export const checkAuthentication = () => dispatch => {
 export const userLogout = () => dispatch => {
     firebase.auth().signOut().then(() => {
         dispatch(logoutSuccess())
-        console.log("User Logout Successful")
+        dispatch(actions.setToastState(true,"Success",`Logout Successful`))
     }).catch(err => {
-        console.log(err)
+        dispatch(actions.setToastState(true,"Success",`${err}`))
     })
 }

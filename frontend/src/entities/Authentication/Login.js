@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom'
 import * as actions from '../../redux/actions'
 import Loader from '../../components/Loader/Loader'
 import { useDispatch, useSelector } from 'react-redux'
+import Toast from '../../components/Toast/Toast'
 
 const Login = () => {
     const [passwordHidden, setPasswordHidden] = useState(true)
@@ -31,6 +32,7 @@ const Login = () => {
     };
     return (
         <div className="authentication-layout d-flex">
+            <Toast/>
             {
                 loading && <Loader />
             }

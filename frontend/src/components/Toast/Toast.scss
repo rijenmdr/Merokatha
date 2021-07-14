@@ -1,0 +1,58 @@
+@import '../../assets/scss/layout.scss';
+.toast{
+    position: fixed;
+    z-index: 99999999;
+    padding: 18px;
+    background: #fff;
+    bottom:13vh;
+    right: 100px;
+    border-radius: 5px;
+    border: .1px solid #b7b7b7;
+    box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
+    
+    &.success {
+        border-left:6px solid $success-color;
+        color: #000;
+    }
+    
+    &.error {
+        border-left:6px solid $danger-color;
+        color: #000;
+    }
+    
+    &.on {
+        transform: translateY(80%);
+        opacity: 1;
+    }
+    
+    &.off {
+        transform: translateY(0);
+        opacity: 0;
+    } 
+
+    .type-icon{
+        margin-right:10px;
+        font-weight: 700;
+        font-size: 20px;
+        color: #fff;
+        border-radius: 50%;
+        padding: 3px;
+        &.success{
+            background: $success-color;
+        }
+        &.error{
+            background: $danger-color;
+        }
+    }
+    .toast-info{
+        .toast-type{
+            font-size: 16px;
+            font-weight: 800;
+        }
+        .toast-message{
+            font-size: 14px;
+            font-weight: 300;
+            margin-top: 5px;
+        }
+    }
+}
