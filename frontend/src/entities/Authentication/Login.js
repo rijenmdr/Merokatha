@@ -116,7 +116,7 @@ const Login = () => {
                     Don’t have an account?<a href="/signup" className="bold pointer dark-text-color"> Sign up</a>
                 </div>
                 <div className="forget-password mt-20 text-center bold pointer">
-                    Forgot Password?
+                    <a href="/forget-password" className="bold pointer dark-text-color"> Forgot Password?</a>
                 </div>
             </form>
         </div>

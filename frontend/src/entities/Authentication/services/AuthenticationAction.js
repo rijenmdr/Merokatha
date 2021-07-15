@@ -73,6 +73,20 @@ export const signInUser = (user, history) => dispatch => {
         })
 }
 
+export const forgetPassword = (data,history) => dispatch =>{
+    dispatch(authStart())
+    firebase.auth().sendPasswordResetEmail(data?.email)
+    .then(()=>{
+        dispatch(actions.setToastState(true,"Success",`Password reset link has been sent to your email`))
+        dispatch(authFail())
+        history.push('/login')
+    })
+    .catch(err=>{
+        dispatch(actions.setToastState(true,"Error",`${err}`))
+        dispatch(authFail())
+    })
+}
+
 export const checkAuthentication = () =>dispatch => {
     firebase.auth().onAuthStateChanged(async authenticatedUser => {
         if (authenticatedUser) {
@@ -94,6 +108,6 @@ export const userLogout = () => dispatch => {
         dispatch(logoutSuccess())
         dispatch(actions.setToastState(true,"Success",`Logout Successful`))
     }).catch(err => {
-        dispatch(actions.setToastState(true,"Success",`${err}`))
+        dispatch(actions.setToastState(true,"Error",`${err}`))
     })
 }

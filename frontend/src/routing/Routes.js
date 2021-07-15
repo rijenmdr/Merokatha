@@ -5,6 +5,7 @@ import Login from '../entities/Authentication/Login'
 import Register from '../entities/Authentication/Register'
 import NotFound from '../components/NotFound'
 import { useSelector } from 'react-redux'
+import ForgetPassword from '../entities/Authentication/ForgetPassword'
 
 const Routes=()=> {
     const authenticationReducer = useSelector(state=>state.AuthenticationReducer)
@@ -14,6 +15,7 @@ const Routes=()=> {
             <Switch>
                 <Route path={`${!isLoggedIn && '/signup'}`} name="register" component={Register}/>
                 <Route path={`${!isLoggedIn && '/login'}`} name="login" component={Login}/>
+                <Route path={`${!isLoggedIn && '/forget-password'}`} name="forget-password" component={ForgetPassword}/>
                 <Route path="" name="landing" component={LandingLayout} exact/>
                 <Route path="*" name="error" component={NotFound} exact/>
             </Switch>

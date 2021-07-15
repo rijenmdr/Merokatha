@@ -131,6 +131,15 @@
                 padding: 16px;
                 letter-spacing: 0.75px;
             }
+            .cancel-btn{
+                background: $light-dark-color;
+                text-transform: uppercase;
+                color: #000;
+                font-size: 16px;
+                font-weight: 700;
+                padding: 16px;
+                letter-spacing: 0.75px;
+            }
         }
         .or-separator{
             .border-line{

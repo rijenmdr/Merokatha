@@ -10,7 +10,8 @@ export {
     authStart,
     authFail,
     checkAuthentication,
-    userLogout
+    userLogout,
+    forgetPassword
 } from '../../entities/Authentication/services/AuthenticationAction';
 
 export {
