@@ -162,6 +162,7 @@
                 margin-right: 10px;
                 padding: 16px 12px;
                 background:transparent;
+                border: .1px solid $light-dark-color;
                 span{
                     text-transform: uppercase;
                     font-size: 14px;
@@ -175,6 +176,22 @@
 }
 
 //responsive 
+
+@media (max-width:1125px) {
+    .authentication-layout{
+        .authentication-right{
+            .other-signup{
+                flex-direction: column;
+                .signup-btn{
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
 
 @media (max-width:683px) {
     .authentication-layout{
@@ -191,9 +208,6 @@
         }
         .authentication-right{
             width: 100%;
-            .other-signup{
-                flex-direction: column;
-            }
         }
     }
 }
