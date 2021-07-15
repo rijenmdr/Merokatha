@@ -3,6 +3,7 @@ import { Switch,Route } from 'react-router-dom'
 import LandingLayout from '../entities/Landing/LandingLayout'
 import Login from '../entities/Authentication/Login'
 import Register from '../entities/Authentication/Register'
+import NotFound from '../components/NotFound'
 import { useSelector } from 'react-redux'
 
 const Routes=()=> {
@@ -14,6 +15,7 @@ const Routes=()=> {
                 <Route path={`${!isLoggedIn && '/signup'}`} name="register" component={Register}/>
                 <Route path={`${!isLoggedIn && '/login'}`} name="login" component={Login}/>
                 <Route path="" name="landing" component={LandingLayout} exact/>
+                <Route path="*" name="error" component={NotFound} exact/>
             </Switch>
         </React.Suspense>
     )

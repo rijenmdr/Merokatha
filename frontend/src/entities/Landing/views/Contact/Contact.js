@@ -5,8 +5,12 @@ import './Contact.scss'
 const Contact=()=> {
     return (
         <div className="contact-layout">
-            <div className="background-image d-flex align-center">
-                
+            <div className="background-image d-flex justify-between">
+                <div></div>
+                <div className="background-right">
+                    <div>
+                    </div>
+                </div>
             </div>
         </div>
     )

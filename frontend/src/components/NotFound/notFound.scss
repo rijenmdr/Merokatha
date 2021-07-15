@@ -1,0 +1,15 @@
+@import '../../assets/scss/layout.scss';
+.page-not-found{
+    background: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/6b443b70759853.5bade2d0a6685.png');
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 16px;
+    margin-top: -11vh;
+    .btn{
+        font-size: 16px;
+        padding: 8px;
+    }
+}
