@@ -73,6 +73,17 @@ export const signInUser = (user, history) => dispatch => {
         })
 }
 
+export const loginWithOtherAccount = (history,account) => dispatch =>{
+    const auth = account==="google" ? new firebase.auth.GoogleAuthProvider() : new firebase.auth.FacebookAuthProvider()
+    firebase.auth().signInWithPopup(auth)
+    .then(()=>{
+        history.push('/')
+    })
+    .catch(err=>{
+        dispatch(actions.setToastState(true,"Error",`${err.message}`))
+    })
+}
+
 export const forgetPassword = (data,history) => dispatch =>{
     dispatch(authStart())
     firebase.auth().sendPasswordResetEmail(data?.email)
@@ -91,13 +102,14 @@ export const checkAuthentication = () =>dispatch => {
     firebase.auth().onAuthStateChanged(async authenticatedUser => {
         if (authenticatedUser) {
             const snapshot = await db.collection("users").doc(authenticatedUser.uid).get()
-            const data = snapshot.data()
+            const data = snapshot.data() 
+            const name = data?.full_name ?? authenticatedUser.displayName
             const auth_user = {
                 uid: authenticatedUser?.uid,
                 email: authenticatedUser?.email,
-                name:data?.full_name
+                name:name
             }
-            dispatch(actions.setToastState(true,"Success",`Welcome Back ${data?.full_name}`))
+            dispatch(actions.setToastState(true,"Success",`Welcome Back ${name}`))
             dispatch(loginUserSuccess(auth_user))
         }
     })

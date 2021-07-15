@@ -5,8 +5,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
 import { ErrorMessage } from '@hookform/error-message'
-import FacebookLogo from '../../assets/images/facebook.png'
-import GoogleLogo from '../../assets/images/google.png'
 import * as actions from '../../redux/actions'
 import Loader from '../../components/Loader/Loader'
 import Toast from '../../components/Toast/Toast'
@@ -185,21 +183,6 @@ const Register = () => {
                 </div>
                 <div className="log-or-signup-mes mt-20 text-center">
                     Already have an account?<a href="/login" className="bold pointer dark-text-color"> Log in</a>
-                </div>
-                <div className="or-separator d-flex justify-between align-center">
-                    <span className="border-line"></span>
-                    <p className="or">Or</p>
-                    <span className="border-line"></span>
-                </div>
-                <div className="other-signup d-flex">
-                    <button className="btn signup-btn">
-                        <img src={GoogleLogo} alt="google-logo" />
-                        <span>Sign up with Google</span>
-                    </button>
-                    <button className="btn signup-btn">
-                        <img src={FacebookLogo} alt="facebook-logo" />
-                        <span>Sign up with Facebook</span>
-                    </button>
                 </div>
             </div>
         </div>

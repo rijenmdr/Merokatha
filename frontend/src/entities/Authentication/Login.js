@@ -8,6 +8,8 @@ import * as actions from '../../redux/actions'
 import Loader from '../../components/Loader/Loader'
 import { useDispatch, useSelector } from 'react-redux'
 import Toast from '../../components/Toast/Toast'
+import FacebookLogo from '../../assets/images/facebook.png'
+import GoogleLogo from '../../assets/images/google.png'
 
 const Login = () => {
     const [passwordHidden, setPasswordHidden] = useState(true)
@@ -30,6 +32,12 @@ const Login = () => {
     const loginForm = (data) => {
         dispatch(actions.signInUser(data, history))
     };
+
+    const loginWithOtherAccount = (e,account) =>{
+        e.preventDefault()
+        dispatch(actions.loginWithOtherAccount(history,account))
+    }
+
     return (
         <div className="authentication-layout d-flex">
             <Toast/>
@@ -117,6 +125,21 @@ const Login = () => {
                 </div>
                 <div className="forget-password mt-20 text-center bold pointer">
                     <a href="/forget-password" className="bold pointer dark-text-color"> Forgot Password?</a>
+                </div>
+                <div className="or-separator d-flex justify-between align-center">
+                    <span className="border-line"></span>
+                    <p className="or">Or</p>
+                    <span className="border-line"></span>
+                </div>
+                <div className="other-signup d-flex">
+                    <button onClick={(e)=>loginWithOtherAccount(e,'google')} className="btn signup-btn">
+                        <img src={GoogleLogo} alt="google-logo" />
+                        <span>Login with Google</span>
+                    </button>
+                    <button onClick={(e)=>loginWithOtherAccount(e,'facebook')} className="btn signup-btn">
+                        <img src={FacebookLogo} alt="facebook-logo" />
+                        <span>Login with Facebook</span>
+                    </button>
                 </div>
             </form>
         </div>

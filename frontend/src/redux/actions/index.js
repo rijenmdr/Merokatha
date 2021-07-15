@@ -7,6 +7,7 @@ export {
 export {
     registerNewUser,
     signInUser,
+    loginWithOtherAccount,
     authStart,
     authFail,
     checkAuthentication,
