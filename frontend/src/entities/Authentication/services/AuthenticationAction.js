@@ -38,9 +38,10 @@ export const registerNewUser = (user, history) => dispatch => {
                     .set({
                         full_name: user?.name,
                         email: user?.email
-                    }).then((res) => {
+                    }).then(() => {
+                        registeredUser.user.sendEmailVerification()
                         firebase.auth().signOut()
-                        dispatch(actions.setToastState(true,"Success",`User Registered Successfully`))
+                        dispatch(actions.setToastState(true,"Success",`Account has been registered successfully. Please verify it through email`))
                         dispatch(authFail())
                         history.push('/login')
                     }).catch(err => {
@@ -75,12 +76,13 @@ export const signInUser = (user, history) => dispatch => {
 export const checkAuthentication = () =>dispatch => {
     firebase.auth().onAuthStateChanged(async authenticatedUser => {
         if (authenticatedUser) {
-            const auth_user = {
-                uid: authenticatedUser?.uid,
-                email: authenticatedUser?.email
-            }
             const snapshot = await db.collection("users").doc(authenticatedUser.uid).get()
             const data = snapshot.data()
+            const auth_user = {
+                uid: authenticatedUser?.uid,
+                email: authenticatedUser?.email,
+                name:data?.full_name
+            }
             dispatch(actions.setToastState(true,"Success",`Welcome Back ${data?.full_name}`))
             dispatch(loginUserSuccess(auth_user))
         }
