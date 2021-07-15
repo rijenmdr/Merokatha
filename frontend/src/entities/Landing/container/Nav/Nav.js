@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import * as actions from '../../../../redux/actions'
 
 const Nav = () => {
@@ -9,6 +9,8 @@ const Nav = () => {
 
     const authenticationReducer = useSelector(state => state.AuthenticationReducer)
     const { isLoggedIn } = authenticationReducer
+
+    const history = useHistory()
 
     const navRef = useRef()
     const inputRef = useRef()
@@ -50,7 +52,7 @@ const Nav = () => {
     return (
         <div className={`nav ${searchBarVisible && 'd-flex align-center'} ${scrolled ? 'scrolled' : ''}`}>
             <div className={`d-flex justify-between align-center full-height`}>
-                <div className="logo">Merokatha</div>
+                <div className="logo" onClick={()=>history.push('/')}>Merokatha</div>
                 {!searchBarVisible &&
                     <div className={`nav-item`}>
                         <li><NavLink className="item" to="/" activeClassName="active" exact>Home</NavLink></li>

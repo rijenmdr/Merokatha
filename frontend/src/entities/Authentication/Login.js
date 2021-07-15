@@ -113,7 +113,7 @@ const Login = () => {
                     <button type="submit" className="btn auth-btn">Login</button>
                 </div>
                 <div className="log-or-signup-mes mt-20 text-center">
-                    Don’t have an account?<span className="bold pointer"> Sign up</span>
+                    Don’t have an account?<a href="/signup" className="bold pointer dark-text-color"> Sign up</a>
                 </div>
                 <div className="forget-password mt-20 text-center bold pointer">
                     Forgot Password?

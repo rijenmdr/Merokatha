@@ -184,7 +184,7 @@ const Register = () => {
                     <button className="btn auth-btn" onClick={handleSubmit(registerForm)}>Sign up</button>
                 </div>
                 <div className="log-or-signup-mes mt-20 text-center">
-                    Already have an account?<span className="bold pointer"> Log in</span>
+                    Already have an account?<a href="/login" className="bold pointer dark-text-color"> Log in</a>
                 </div>
                 <div className="or-separator d-flex justify-between align-center">
                     <span className="border-line"></span>

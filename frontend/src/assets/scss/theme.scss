@@ -56,6 +56,12 @@ body {
 .text-primary {
   color: $primary-text-color;
 }
+.text-color{
+  color: $text-color;
+}
+.dark-text-color{
+  color:$dark-color;
+}
 .error-text {
   font-size: 0.8rem;
   margin-bottom: 20px;

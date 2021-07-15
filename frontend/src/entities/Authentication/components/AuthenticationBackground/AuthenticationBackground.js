@@ -1,9 +1,11 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 const AuthenticationBackground = () => {
+    const history = useHistory()
     return (
         <div className="authentication-left">
-            <div className="logo">Merokatha</div>
+            <div className="logo" onClick={()=>history.push('/')}>Merokatha</div>
             <div className="welcome-info">
                 <div className="welcome-title">
                     Welcome to our community
