@@ -9,8 +9,7 @@ const HomeBackground = () => {
                 <div className="background-text">
                     <div className="motto">Everybody has a story</div>
                     <div className="info">Discover how different people view life through their own lenses!</div>
-                    <div className="explore">EXPLORE
-                        <div className="border"></div></div>
+                    <div className="explore">EXPLORE</div>
                 </div>
                 <div className="background-bottom d-flex justify-between align-center full-width">
                     <div className="bottom-left d-flex flex-column align-center">

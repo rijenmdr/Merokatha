@@ -51,7 +51,6 @@ const Register = () => {
             <div className="authentication-right d-flex flex-column">
                 <div className="square-box-filled"></div>
                 <div className="title">Get Started!</div>
-                <div className="border-bottom-line w-10"></div>
                 <div className="auth-form mt-40 d-flex flex-column">
                     <div className="form-control">
                         <label htmlFor="name">Full Name</label>

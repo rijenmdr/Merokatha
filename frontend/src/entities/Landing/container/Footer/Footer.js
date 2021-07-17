@@ -23,7 +23,6 @@ const Footer = () => {
                     <div className="footer-top-title mb-20">
                         Get in touch with us.
                     </div>
-                    <div className="border-bottom-line w-10 mb-20"></div>
                     <div className="footer-top-info mb-20">
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
                         Velit officia consequat duis enim velit mollit.

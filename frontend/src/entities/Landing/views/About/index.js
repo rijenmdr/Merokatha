@@ -17,7 +17,6 @@ const AboutLayout=()=> {
             <div className="square-box-filled absolute"></div>
                 <div className="how-we-work">
                     <div className="title">How we Work ?
-                        <div className="border-bottom-line w-5"></div>
                     </div>
                     <div className="work-steps relative">
                         <div className="step ml-xl">
@@ -62,7 +61,6 @@ const AboutLayout=()=> {
                 </div> 
                 <div className="our-team">
                     <div className="title">Our Team
-                        <div className="border-bottom-line w-5"></div>
                     </div>
                     <div className="teams d-flex flex-column">
                     <div className="team d-flex align-center">

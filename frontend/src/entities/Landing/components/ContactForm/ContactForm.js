@@ -12,10 +12,9 @@ const ContactForm = (props) => {
 
     return (
         <div className="contact-form pt-20">
-            <div className="title">
+            <div className="white-title">
                 Contact Us
             </div>
-            <div className="border-bottom-line w-5"></div>
             <div className="form-info mt-20">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
                 Velit officia consequat duis enim velit mollit.

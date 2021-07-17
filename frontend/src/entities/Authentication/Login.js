@@ -48,7 +48,6 @@ const Login = () => {
             <form onSubmit={handleSubmit(loginForm)} method="post" className="authentication-right d-flex flex-column">
                 <div className="square-box-filled"></div>
                 <div className="title">Welcome Back!</div>
-                <div className="border-bottom-line w-10"></div>
                 <div className="auth-message mt-10">
                     Log in with the data that you entered during your registration.
                 </div>

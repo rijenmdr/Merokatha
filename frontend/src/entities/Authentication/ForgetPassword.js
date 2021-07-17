@@ -34,7 +34,6 @@ const ForgetPassword = () => {
             <div method="post" className="authentication-right d-flex flex-column">
                 <div className="square-box-filled"></div>
                 <div className="title">Password Reset!</div>
-                <div className="border-bottom-line w-10"></div>
                 <div className="auth-message mt-20">
                    Enter your email address that you used to register.
                    We will send you an email with link to reset your password.

@@ -168,10 +168,6 @@
     }
     .footer-top{
       margin-bottom: 5vh;
-      .border-bottom-line{
-        height: 0px;
-        border: 2px solid #fff;
-      }
       .footer-top-title{
         font-family: $secondary-font;
         font-style: normal;
@@ -181,6 +177,16 @@
         letter-spacing: 1px;
         text-transform: capitalize;
         color: #FFFFFF;
+        position: relative;
+        &::after{
+          content: "";
+          position: absolute;
+          border-bottom: 5px solid #fff;
+          width: 100px;
+          bottom:-12px;
+          left: 50%;
+          transform: translate(-50%);
+        }
       }
       .footer-top-info{
         font-family: $primary-font;

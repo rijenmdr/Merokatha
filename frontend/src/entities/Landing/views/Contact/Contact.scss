@@ -18,12 +18,22 @@
         backdrop-filter: blur(24px);
         border-radius: 8px;
         margin-top: 40px;
-        .title{
+        .white-title{
+            font-size: 32px;
+            font-family: $secondary-font;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 54px;
             color: #fff;
-            font-size: 36px;
-        }
-        .border-bottom-line{
-            background-color: #fff;
+            position: relative;
+            &::after{
+                content: "";
+                border-bottom: 4px solid #fff;
+                position: absolute;
+                width: 40px;
+                bottom: 0px;
+                left: 0;
+            }
         }
         .form-info{
             font-style: normal;
@@ -80,7 +90,7 @@
             .contact-form{
                 width: 100%;
                 padding: 1vw 5.5vw;
-                .title{
+                .white-title{
                     font-size: 34px;
                 }
                 .form-info{
@@ -143,7 +153,7 @@
         .background-image{
             .contact-form{
                 padding: 2.5vw 5.5vw;
-                .title{
+                .white-title{
                     font-size: 32px;
                 }
                 .main-form{

@@ -34,7 +34,7 @@ const HomeLayout = () => {
                 {/* <div className="square-box-empty-2"></div> */}
                 <div className="square-box-filled-2"></div>
                 <div className="d-flex justify-between flex-wrap align-center first-info">
-                    <div className="title info-title w-50">
+                    <div className="info-title w-50">
                         We help bring out the creativity within you
                     </div>
                     <div className="info-description">
@@ -71,7 +71,7 @@ const HomeLayout = () => {
                         </div>
                     </div>
                     </div>
-                    <div className="content-second-info title">
+                    <div className="content-second-info">
                         At the end of the day, it’s your passion, your personality,
                         that drives what you’re going to do.
                     </div>
@@ -79,8 +79,6 @@ const HomeLayout = () => {
                 <div className="featured-categories">
                     <div className="title">
                         Our Featured Categories
-                    </div>
-                    <div className="border-bottom-line w-5">
                     </div>
                     <Suspense fallback={<div>Loading...</div>}>
                         <FeaturedCategories
@@ -92,8 +90,6 @@ const HomeLayout = () => {
                     <div className="title">
                         Our Featured Stories
                     </div>
-                    <div className="border-bottom-line w-5">
-                    </div>
                     <Suspense fallback={<div>Loading...</div>}>
                         <FeaturedStories
                             featuredStories={featuredStories}
@@ -104,7 +100,7 @@ const HomeLayout = () => {
                     <div className="content-image">
 
                     </div>
-                    <div className="content-desc title">
+                    <div className="content-desc">
                         Some of these things are true and some of them lies.
                         But they are all good stories.
                     </div>
@@ -113,7 +109,6 @@ const HomeLayout = () => {
                     <div className="title">
                         Our Daily Useful Stories
                     </div>
-                    <div className="border-bottom-line w-5"></div>
                     <Suspense fallback={<div>Loading...</div>}>
                         <DailyStories
                             dailyStories={dailyStories}
