@@ -28,6 +28,7 @@
     &.off {
         transform: translateY(0);
         opacity: 0;
+        display: none;
     } 
 
     .type-icon{
