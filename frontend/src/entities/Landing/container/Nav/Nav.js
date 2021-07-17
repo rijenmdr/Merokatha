@@ -41,6 +41,7 @@ const Nav = () => {
 
     const logoutHandler = () => {
         dispatch(actions.userLogout())
+        history.push('/')
     }
 
     useEffect(() => {
