@@ -1,7 +1,8 @@
 export {
     fetchFeaturedCategories,
     fetchFeaturedStories,
-    fetchDailyStories
+    fetchDailyStories,
+    setLoading
 } from '../../entities/Landing/views/Home/services/HomeAction';
 
 export {
@@ -17,4 +18,9 @@ export {
 
 export {
     setToastState
-} from '../../components/Toast/services/ToastAction'
+} from '../../components/Toast/services/ToastAction';
+
+export {
+    sendContactInfo,
+    fetchAllPartners
+} from '../../entities/Landing/views/Contact/services/ContactAction';

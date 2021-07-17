@@ -25,6 +25,13 @@ export const fetchDailyStoriesSuccess = (dailyStories) => {
     }
 }
 
+export const setLoading = (isLoading) => {
+    return {
+        type:actionType.SET_LOADING,
+        isLoading:isLoading
+    }
+}
+
 export const fetchFeaturedCategories = () => async (dispatch) => {
     try {
         const featured_category = await db.collection('category').where("is_featured",'==',true).get()

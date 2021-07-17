@@ -3,7 +3,8 @@ import * as actionType from './HomeTypes'
 const intialState={
     featuredCategories:[],
     featuredStories:[],
-    dailyStories:[]
+    dailyStories:[],
+    isLoading:false
 }
 
 const homeReducer = (state=intialState,actions) =>{
@@ -22,6 +23,11 @@ const homeReducer = (state=intialState,actions) =>{
             return {
                 ...state,
                 dailyStories:actions.dailyStories
+            }
+        case actionType.SET_LOADING:
+            return {
+                ...state,
+                isLoading:actions.isLoading
             }
         default:
             return state
